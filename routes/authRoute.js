@@ -78,7 +78,7 @@ router.delete(
 
 router.delete("/empty-cart", authMiddleware, emptyCart);
 
-router.delete("/:id", deleteaUser);
+router.delete("/:id", authMiddleware, isAdmin, deleteaUser);
 
 router.put("/edit-user", authMiddleware, updatedUser);
 router.put("/save-address", authMiddleware, saveAddress);

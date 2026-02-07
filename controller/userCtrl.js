@@ -299,7 +299,6 @@ const forgotPasswordToken = asyncHandler(async (req, res) => {
     const token = await user.createPasswordResetToken();
 
     await user.save();
-    console.log(token);
     const resetURL = `Hi, Please follow this link to reset Your Password. This link is valid till 10 minutes from now. <a href='${process.env.FRONTEND_URL}/reset-password/${token}'>Click Here</a>`;
 
     const data = {
